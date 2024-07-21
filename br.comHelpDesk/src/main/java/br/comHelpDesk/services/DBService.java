@@ -28,16 +28,16 @@ public class DBService {
 	public void instanciaDB() {
 		Tecnico t1 = new Tecnico(null, "Marcus Aurelio", "63826346033","marcus@email.com" , "123");
 		t1.addPerfil(Perfil.ADMIN);
-		Tecnico tec2 = new Tecnico(null, "Satoro Gojo", "123456789", "gojo@email.com", "123");
-		Tecnico tec3 = new Tecnico(null, "Satoro Gojo", "123456344789", "gojo2@email.com", "123");
-		Tecnico tec4 = new Tecnico(null, "Satoro Gojo", "123443456789", "gojo3@email.com", "123");
-		Tecnico tec5 = new Tecnico(null, "Satoro Gojo", "1234543436789", "goj4o@email.com", "123");
+		Tecnico tec2 = new Tecnico(null, "Satoro Gojo", "38442269070", "gojo@email.com", "123");
+		Tecnico tec3 = new Tecnico(null, "Satoro Gojo", "86500335040", "gojo2@email.com", "123");
+		Tecnico tec4 = new Tecnico(null, "Satoro Gojo", "41246390078", "gojo3@email.com", "123");
+		Tecnico tec5 = new Tecnico(null, "Satoro Gojo", "03124262085", "goj4o@email.com", "123");
 		
-		Cliente cli1 = new Cliente(null, "Jose", "89794571032", "jose@email.com", "123");
-		Cliente cli2 = new Cliente(null, "Maria", "987654321", "maria1@email.com", "123");
-		Cliente cli3 = new Cliente(null, "Maria1", "987654344521", "maria2@email.com", "123");
-		Cliente cli4 = new Cliente(null, "Maria2", "9876454554321", "maria3@email.com", "123");
-		Cliente cli5 = new Cliente(null, "Maria3", "987655454321", "maria4@email.com", "123");
+		Cliente cli1 = new Cliente(null, "Jose", "00215115007", "jose@email.com", "123");
+		Cliente cli2 = new Cliente(null, "Maria", "28697557089", "maria1@email.com", "123");
+		Cliente cli3 = new Cliente(null, "Maria1", "76293597052", "maria2@email.com", "123");
+		Cliente cli4 = new Cliente(null, "Maria2", "20448366029", "maria3@email.com", "123");
+		Cliente cli5 = new Cliente(null, "Maria3", "47434688092", "maria4@email.com", "123");
 		
 		Chamado chm = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "chamado 01", "Primeiro chamado", cli1, t1);
 		Chamado chm2 = new Chamado(null, Prioridade.MEDIA, Status.ANDAMENTO, "chamado2", "equipamento recebido em analise de defeito", cli2, tec2);
