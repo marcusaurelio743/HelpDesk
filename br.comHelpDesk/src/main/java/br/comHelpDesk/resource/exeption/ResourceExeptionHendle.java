@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import br.comHelpDesk.services.exeptions.DataIntegrityViolationException;
 import br.comHelpDesk.services.exeptions.ObjectNotFundExeption;
 
 @ControllerAdvice
@@ -19,6 +20,15 @@ public class ResourceExeptionHendle {
 		StandardError error = new StandardError(System.currentTimeMillis(),HttpStatus.NOT_FOUND.value(),
 				"Object not found", ex.getMessage(), request.getRequestURI());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+	}
+	
+	@ExceptionHandler(DataIntegrityViolationException.class)
+	//essa classe é um manipulaodr de exeções
+	public ResponseEntity<StandardError> DataIntegrityViolationException(DataIntegrityViolationException ex, HttpServletRequest request){
+		
+		StandardError error = new StandardError(System.currentTimeMillis(),HttpStatus.BAD_REQUEST.value(),
+				"Violação de dados", ex.getMessage(), request.getRequestURI());
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 	}
 
 }
