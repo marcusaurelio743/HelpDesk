@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.comHelpDesk.domain.Tecnico;
+import br.comHelpDesk.dtos.TecnicoDTO;
 import br.comHelpDesk.repositores.TecnicoRepository;
 import br.comHelpDesk.services.exeptions.ObjectNotFundExeption;
 
@@ -29,6 +30,13 @@ public class TecnicoService {
 	 * pode ter acesso aos metodos do jpa de forma direta*/
 	public TecnicoRepository getRepository() {
 		return repository;
+	}
+
+	public Tecnico created(TecnicoDTO tecnicoDTO) {
+		tecnicoDTO.setId(null);
+		
+		Tecnico newObj = new Tecnico(tecnicoDTO);
+		return repository.save(newObj);
 	}
 
 }
