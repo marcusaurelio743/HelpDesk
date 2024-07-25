@@ -35,7 +35,7 @@ public class ResourceExeptionHendle {
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	//essa classe é um manipulaodr de exeções
-	public ResponseEntity<StandardError> ValidationErrors(MethodArgumentNotValidException ex, HttpServletRequest request){
+	public ResponseEntity<ValidationErros> ValidationErrors(MethodArgumentNotValidException ex, HttpServletRequest request){
 		
 		ValidationErros errors = new ValidationErros(System.currentTimeMillis(),HttpStatus.BAD_REQUEST.value(),
 				"Validation Error","Error na Validação dos campos", request.getRequestURI());

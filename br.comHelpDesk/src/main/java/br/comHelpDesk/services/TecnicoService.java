@@ -61,4 +61,16 @@ public class TecnicoService {
 		
 	}
 
+	public Tecnico update(Long id, TecnicoDTO ObjDto) {
+
+		ObjDto.setId(id);
+		Tecnico oldObj = buscaPorId(id);
+		validaPorCpfEmail(ObjDto);
+		oldObj = new Tecnico(ObjDto);
+
+		return repository.save(oldObj);
+	}
+
+	
+
 }
