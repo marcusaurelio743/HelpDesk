@@ -71,6 +71,17 @@ public class TecnicoService {
 		return repository.save(oldObj);
 	}
 
+	public void Deletar(Long id) {
+		Tecnico oldtec = buscaPorId(id);
+		
+		if( oldtec.getChamados().size() > 0) {
+			throw new DataIntegrityViolationException("Tecnico Possui ordem de serviço e não pode ser Apagado !!");
+		}else {
+			repository.deleteById(id);
+		}
+		
+	}
+
 	
 
 }
