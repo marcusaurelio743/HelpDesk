@@ -1,5 +1,6 @@
 package br.comHelpDesk.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class ChamadoService {
 		Optional<Chamado> obj = repository.findById(id);
 		
 		return obj.orElseThrow(() -> new ObjectNotFundExeption("Objeto não encontrado id: "+id));
+	}
+
+	public List<Chamado> buscaTodos() {
+		
+		return repository.findAll();
 	}
 
 }

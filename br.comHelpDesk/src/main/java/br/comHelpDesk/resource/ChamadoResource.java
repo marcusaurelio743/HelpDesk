@@ -1,5 +1,8 @@
 package br.comHelpDesk.resource;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +25,14 @@ public class ChamadoResource {
 		Chamado chamado = service.buscaPorId(id);
 		
 		return ResponseEntity.ok().body(new ChamadoDTO(chamado));
+	}
+	
+	@GetMapping
+	public ResponseEntity<List<ChamadoDTO>> buscarTodos(){
+		List<Chamado> chamados = service.buscaTodos();
+		List<ChamadoDTO> listDtos = chamados.stream().map(obj -> new ChamadoDTO(obj)).collect(Collectors.toList());
+		
+		return ResponseEntity.ok().body(listDtos);
 	}
 
 }
