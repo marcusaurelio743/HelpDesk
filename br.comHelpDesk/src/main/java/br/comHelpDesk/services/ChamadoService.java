@@ -1,5 +1,6 @@
 package br.comHelpDesk.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,6 +43,15 @@ public class ChamadoService {
 		
 		return repository.save(newChamado(chamadoDTO));
 	}
+	public Chamado atualizar(Long id, @Valid ChamadoDTO chmDto) {
+		chmDto.setId(id);
+		
+		Chamado oldChamado = buscaPorId(id);
+		oldChamado= newChamado(chmDto);
+		
+		
+		return repository.save(oldChamado);
+	}
 	
 	private Chamado newChamado(ChamadoDTO chamadoDTO) {
 		Cliente cliente = clienteService.buscaPorId(chamadoDTO.getCliente());
@@ -51,6 +61,10 @@ public class ChamadoService {
 		
 		if(chamadoDTO.getId() != null) {
 			chamado.setId(chamadoDTO.getId());
+		}
+		if(chamadoDTO.getStatus().equals(2)) {
+			chamado.setDataFechamento(LocalDate.now());
+			
 		}
 		
 		chamado.setTecnico(tecnico);
@@ -62,5 +76,7 @@ public class ChamadoService {
 		return chamado;
 		
 	}
+
+	
 
 }

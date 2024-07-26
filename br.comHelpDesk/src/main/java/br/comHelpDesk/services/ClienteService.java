@@ -24,6 +24,7 @@ public class ClienteService {
 
 	public Cliente buscaPorId(Long id) {
 		Optional<Cliente> obj = repository.findById(id);
+		
 
 		return obj.orElseThrow(() -> new ObjectNotFundExeption("Objeto não encontrado id " + id));
 	}

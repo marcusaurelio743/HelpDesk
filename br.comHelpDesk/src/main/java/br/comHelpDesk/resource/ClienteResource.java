@@ -53,8 +53,8 @@ public class ClienteResource {
 		return ResponseEntity.ok().body(listDtos);
 	}
 	
-	@PostMapping
 	
+	@PostMapping
 	public ResponseEntity<ClienteDTO> created( @Valid @RequestBody ClienteDTO ClienteDTO){
 		Cliente newobj = service.created(ClienteDTO);
 		
