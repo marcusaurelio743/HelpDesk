@@ -29,6 +29,7 @@ public class ClienteResource {
 	@Autowired
 	private ClienteService service;
 	
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<ClienteDTO> buscaPorId(@PathVariable Long id){
 		Cliente obj = service.buscaPorId(id);
