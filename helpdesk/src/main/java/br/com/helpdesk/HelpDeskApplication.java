@@ -33,8 +33,8 @@ public class HelpDeskApplication  implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Tecnico t1 = new Tecnico(null, "Jose", "232332322323", "jose@email.com", "1234556");
-		Cliente c1 = new Cliente(null, "Marcus Aurélio", "434343434334", "Marcus@email.com", "123456");
+		Tecnico t1 = new Tecnico(null, "Jose", "73823694049", "jose@email.com", "1234556");
+		Cliente c1 = new Cliente(null, "Marcus Aurélio", "78495900076", "Marcus@email.com", "123456");
 		t1.AddPerfis(Perfil.TECNICO);
 		Chamado ch1 = new Chamado(null, Prioridade.MEDIA, Status.ABERTO, "Reparo em PC", "Reparo na placa mae", t1, c1);
 		clienteRepository.saveAll(Arrays.asList(c1));
