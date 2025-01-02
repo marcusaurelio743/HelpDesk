@@ -1,0 +1,16 @@
+package br.com.helpdesk.services.exceptions;
+
+public class ObjectNotFundException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
+
+	public ObjectNotFundException(String message, Throwable cause) {
+		super(message, cause);
+	}
+
+	public ObjectNotFundException(String message) {
+		super(message);
+	}
+	
+
+}
