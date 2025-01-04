@@ -26,6 +26,7 @@ public class TecnicoDto implements Serializable {
 
 	public TecnicoDto() { 
 		super();
+		AddPerfis(Perfil.CLIENTE);
 	}
 
 	public TecnicoDto(Tecnico obj) {
