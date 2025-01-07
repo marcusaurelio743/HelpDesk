@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import br.com.helpdesk.domain.Tecnico;
@@ -16,9 +18,13 @@ public class TecnicoDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	protected Long id;
+	@NotNull(message =  "O campo Nome é requerido")
 	protected String nome;
+	@NotNull(message =  "O campo CPF é requerido")
 	protected String cpf;
+	@NotNull(message =  "O campo Email é requerido")
 	protected String email;
+	@NotNull(message =  "O campo Senha é requerido")
 	protected String senha;
 	protected List<Integer> perfis = new ArrayList<>();
 	@JsonFormat(pattern = "dd/M/yyyy")
