@@ -49,7 +49,7 @@ public class ResourceExeptionHendle {
 		for(FieldError x: ex.getBindingResult().getFieldErrors()) {
 				errors.AddErrors(x.getField(), x.getDefaultMessage());
 			}
-		
+			
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
 		
 		
